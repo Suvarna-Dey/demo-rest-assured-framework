@@ -1,4 +1,4 @@
-Feature: This feature tests the whereistheiss public APIs
+Feature: This feature tests the wheretheiss public APIs
 # Tests coverage for below APIs
 # Get satellite position by id : /satellites/[id]/positions
 # Get two line element set for a given satellite using id: /satellites/[id]/tles
@@ -28,6 +28,15 @@ Feature: This feature tests the whereistheiss public APIs
       | 123          | 1436029892 |       | 404           | satellite not found        |
       | 25544        |            | miles | 400           | invalid timestamp in list: |
 
+   Scenario: Validate response for get satellite positions with 10 timestamps
+     When I get the satellite position for satellite id "25544" with 10 timestamps
+     Then the response status code should be 200
+     And the response body should be have satellite position
+
+  Scenario: Validate response for get satellite positions with 10 timestamps
+    When I get the satellite position for satellite id "25544" with 11 timestamps
+    Then the response status code should be 403
+
   Scenario Outline: Get TLE data for a satellite in JSON and Text format
     When I get TLE data in "<format>" format for a given satellite "<satellite_id>"
     Then the response status code should be 200
@@ -38,3 +47,10 @@ Feature: This feature tests the whereistheiss public APIs
     | 25544        |        |
     | 25544        | json   |
     | 25544        | text   |
+
+  @NFT
+  Scenario: Load test create quote request
+    When I get the satellite position for satellite "<satellite_id>" for below 20 times
+      | timestamps | <timestamps> |
+      | units      | <unit>       |
+    Then log the response when service is unavailable
