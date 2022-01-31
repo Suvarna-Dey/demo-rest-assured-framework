@@ -82,3 +82,154 @@
 2022-01-29 11:39:08 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
 2022-01-29 11:39:08 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=null, units=miles}    returns    400
 2022-01-29 11:39:08 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 10:53:07 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 10:53:07 INFO  Log:13 - Get Request With Full Response
+2022-01-31 10:53:07 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
+2022-01-31 10:53:07 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=1436229890,}    returns    400
+2022-01-31 10:53:07 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 10:53:08 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 10:53:08 INFO  Log:13 - Get Request With Full Response
+2022-01-31 10:53:08 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
+2022-01-31 10:53:08 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=1436329890,}    returns    400
+2022-01-31 10:53:08 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:29:07 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:29:07 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:29:07 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:29:07 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/123/positions  with query params  {timestamps=1436029892, units=null}    returns    404
+2022-01-31 11:29:07 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:29:08 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:29:08 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:29:08 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
+2022-01-31 11:29:08 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=null, units=miles}    returns    400
+2022-01-31 11:29:08 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:29:44 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:29:44 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:29:44 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:29:44 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/123/positions  with query params  {timestamps=1436029892, units=null}    returns    404
+2022-01-31 11:29:44 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:29:45 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:29:45 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:29:45 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
+2022-01-31 11:29:45 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=null, units=miles}    returns    400
+2022-01-31 11:29:45 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:29 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:29 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:29 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:29 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:29 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:29 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:30 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:30 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:30 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:30 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:30 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:30 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:30 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:30 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:30 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:30 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:30 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:30 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:31 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:31 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:31 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:31 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:31 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:31 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:32 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:32 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:32 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:32 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:32 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:32 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:33 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:33 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:33 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:33 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:33 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:33 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:33 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:33 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:33 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:33 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:33 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:33 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:34 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:34 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:34 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:34 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:34 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:34 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:35 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:35 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:35 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:35 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:35 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:35 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:35 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:35 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:35 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:35 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:35 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:35 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:36 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:36 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:36 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:36 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:36 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:36 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:37 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:37 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:37 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:37 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:37 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:37 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:38 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:38 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:38 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:38 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:38 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:38 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:38 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:38 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:38 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:38 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:38 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:38 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:39 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:39 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:39 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:39 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:39 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:39 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:40 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:40 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:40 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:40 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:40 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:40 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:41 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:41 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:41 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:41 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:41 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:41 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:41 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:41 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:41 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:41 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:41 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:41 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:42 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:42 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:42 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:42 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:42 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:42 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:43 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-01-31 11:43:43 INFO  Log:13 - Get Request With Full Response
+2022-01-31 11:43:43 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-01-31 11:43:43 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/<satellite_id>/positions  with query params  {timestamps=<timestamps>, units=<unit>}    returns    404
+2022-01-31 11:43:43 INFO  Log:18 - #######################-E---N---D-######################
+2022-01-31 11:43:43 WARN  Log:29 - Service unavailable, status: 404
+2022-01-31 11:43:43 WARN  Log:29 - Service unreliable for 20 time.

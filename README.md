@@ -27,5 +27,11 @@ Reports can be viewed in folder:
 ### Logging:
 The api logs for negative scenarios can be viewed in folder: `log/api.log`
 
+###Observations/Issues
+1. The exact error codes and messages are not specified for negative path. So the tests have been written by some assumption of error codes and scenarios.
+2. The API spec does not talk about the data types of the response or request data members.
+3. `/satellites/[id]/positions` does not limits the timestamps to 10 which contracdicts the API spec.
+4. If a same timestamp is provided to the `/satellites/[id]/positions` as query param, the same position is returned twice.
+
 ### Author
 Suvarna Narayan Dey  

@@ -13,7 +13,11 @@ import org.truelayer.challenge.pojo.Request.GetSatellitePositionByIdRequest;
 import org.truelayer.challenge.pojo.Request.GetTleBySatelliteIdRequest;
 import org.truelayer.challenge.pojo.Response.GetSatellitePositionByIdResponse;
 import org.truelayer.challenge.pojo.Response.GetTleBySatelliteIdResponse;
+import org.truelayer.challenge.util.Log;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -25,6 +29,7 @@ public class WhereTheIssApi extends RestEndPoints{
     private Map<String,String> query_params = new HashMap<>();
     private GetSatellitePositionByIdRequest getSatelliteByIdRequest = new GetSatellitePositionByIdRequest();
     private GetTleBySatelliteIdRequest getTleBySatelliteIdRequest =new GetTleBySatelliteIdRequest();
+    private int serviceUnreliabilityCount;
 
     @Then("the response status code should be {int}")
     public void the_response_status_code_should_be(int responseCode) {
@@ -99,7 +104,45 @@ public class WhereTheIssApi extends RestEndPoints{
     }
 
     @When("I get the satellite position for satellite id {string} with {int} timestamps")
-    public void iGetTheSatellitePositionForSatelliteIdWithTimestamps(String satelliteId, int numberOfTimestamps) {
+    public void iGetTheSatellitePositionForSatelliteIdWithTimestamps(String satelliteId, int numberOfTimestamps) throws IOException {
+        String data = new String(Files.readAllBytes(Paths.get("src/test/resources/data/timestamps")));
+        List<String> timestamps = Arrays.asList(data.split(","));
+        String timestamps_header="";
 
+        for(int i=0;i<numberOfTimestamps;i++)
+        {
+            timestamps_header = timestamps.get(i)+","+timestamps_header;
+        }
+
+        timestamps_header = timestamps_header.substring(0,timestamps_header.length()-1);
+        query_params.put("timestamps",timestamps_header);
+        response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]",satelliteId),query_params);
+
+        getSatelliteByIdRequest.setSatelliteId(satelliteId);
+        getSatelliteByIdRequest.setUnits(query_params.get("units"));
+        getSatelliteByIdRequest.setTimestamp(query_params.get("timestamps"));
+    }
+
+    @Then("log the response when service is unavailable")
+    public void logTheResponseWhenServiceIsUnavailable() {
+        Log.warn("Service unreliable for "+serviceUnreliabilityCount+" time.");
+    }
+
+    @When("I get the satellite position for satellite {string} for below {int} times")
+    public void iGetTheSatellitePositionForSatelliteForBelowTimes(String satellite_id, int load, DataTable table) {
+        List<List<String>> rows = table.asLists(String.class);
+        for (List<String> columns : rows) {
+            query_params.put(columns.get(0), columns.get(1));
+        }
+        int i=0;
+        //invoking the API number of times
+        while(i<load) {
+            response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]", satellite_id), query_params);
+            if(response.getStatusCode() != 200) {
+                Log.warn("Service unavailable, status: " + response.statusCode());
+                serviceUnreliabilityCount++;
+            }
+            i++;
+        }
     }
 }

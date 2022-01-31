@@ -35,8 +35,7 @@ Feature: This feature tests the wheretheiss public APIs
 
   Scenario: Validate response for get satellite positions with 10 timestamps
     When I get the satellite position for satellite id "25544" with 11 timestamps
-    Then the response status code should be 200
-    And the response body should be have satellite position
+    Then the response status code should be 403
 
   Scenario Outline: Get TLE data for a satellite in JSON and Text format
     When I get TLE data in "<format>" format for a given satellite "<satellite_id>"
@@ -48,3 +47,10 @@ Feature: This feature tests the wheretheiss public APIs
     | 25544        |        |
     | 25544        | json   |
     | 25544        | text   |
+
+  @NFT
+  Scenario: Load test create quote request
+    When I get the satellite position for satellite "<satellite_id>" for below 20 times
+      | timestamps | <timestamps> |
+      | units      | <unit>       |
+    Then log the response when service is unavailable
