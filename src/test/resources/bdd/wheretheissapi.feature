@@ -50,7 +50,7 @@ Feature: This feature tests the wheretheiss public APIs
 
   @NFT
   Scenario: Load test create quote request
-    When I get the satellite position for satellite "<satellite_id>" for below 20 times
-      | timestamps | <timestamps> |
-      | units      | <unit>       |
+    When I get the satellite position for satellite "25544" for below 20 times
+      | timestamps | 1436029892 |
+      | units      | miles      |
     Then log the response when service is unavailable

@@ -144,5 +144,6 @@ public class WhereTheIssApi extends RestEndPoints{
             }
             i++;
         }
+        System.out.println(serviceUnreliabilityCount);
     }
 }
