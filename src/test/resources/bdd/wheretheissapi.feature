@@ -16,6 +16,7 @@ Feature: WTIA API tests
       | 25544        | 1436029892            | miles | 200           |
       | 25544        | 1436029892,1436029902 | miles | 200           |
       | 25544        | 1436029892            |       | 200           |
+      | 25544        | 1436029892,1436029892 | miles | 200           |
 
   Scenario Outline: Validations for get satellite position by Id
     When I get the satellite position for satellite "<satellite_id>" for below
@@ -25,14 +26,14 @@ Feature: WTIA API tests
     And the error message should be "<error>"
 
     Examples:
-      | satellite_id | timestamps | unit  | response_code | error                      |
-      | 123          | 1436029892 |       | 404           | satellite not found        |
-      | 25544        |            | miles | 400           | invalid timestamp in list: |
+      | satellite_id | timestamps            | unit  | response_code | error                      |
+      | 123          | 1436029892            |       | 404           | satellite not found        |
+      | 25544        |                       | miles | 400           | invalid timestamp in list: |
 
-   Scenario: Validate response for get satellite positions with 10 timestamps
-     When I get the satellite position for satellite id "25544" with 10 timestamps
-     Then the response status code should be 200
-     And the response body should be have satellite position
+  Scenario: Validate response for get satellite positions with 10 timestamps
+    When I get the satellite position for satellite id "25544" with 10 timestamps
+    Then the response status code should be 200
+    And the response body should be have satellite position
 
   Scenario: Validate response for get satellite positions with 10 timestamps
     When I get the satellite position for satellite id "25544" with 11 timestamps
@@ -43,11 +44,11 @@ Feature: WTIA API tests
     Then the response status code should be 200
     And the response body should have TLE data for given satellite
 
-  Examples:
-    | satellite_id | format |
-    | 25544        |        |
-    | 25544        | json   |
-    | 25544        | text   |
+    Examples:
+      | satellite_id | format |
+      | 25544        |        |
+      | 25544        | json   |
+      | 25544        | text   |
 
   @NFT
   Scenario: Load test create quote request

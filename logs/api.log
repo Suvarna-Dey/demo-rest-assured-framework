@@ -20,3 +20,14 @@
 2022-02-01 00:20:41 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=null, units=miles}    returns    400
 2022-02-01 00:20:41 INFO  Log:18 - #######################-E---N---D-######################
 2022-02-01 00:20:57 WARN  Log:29 - Service unreliable for 0 time.
+2022-02-01 11:13:57 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-02-01 11:13:57 INFO  Log:13 - Get Request With Full Response
+2022-02-01 11:13:57 INFO  Log:13 - The Response Body is    {"error":"satellite not found","status":404}
+2022-02-01 11:13:57 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/123/positions  with query params  {timestamps=1436029892, units=null}    returns    404
+2022-02-01 11:13:57 INFO  Log:18 - #######################-E---N---D-######################
+2022-02-01 11:13:58 INFO  Log:9 - #######################-S---T---A---R---T-######################
+2022-02-01 11:13:58 INFO  Log:13 - Get Request With Full Response
+2022-02-01 11:13:58 INFO  Log:13 - The Response Body is    {"error":"invalid timestamp in list: ","status":400}
+2022-02-01 11:13:58 INFO  Log:13 - The Endpoint    https://api.wheretheiss.at/v1/satellites/25544/positions  with query params  {timestamps=null, units=miles}    returns    400
+2022-02-01 11:13:58 INFO  Log:18 - #######################-E---N---D-######################
+2022-02-01 11:14:14 WARN  Log:29 - Service unreliable for 0 time.

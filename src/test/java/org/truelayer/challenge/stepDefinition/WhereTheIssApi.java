@@ -14,11 +14,11 @@ import org.truelayer.challenge.pojo.Request.GetTleBySatelliteIdRequest;
 import org.truelayer.challenge.pojo.Response.GetSatellitePositionByIdResponse;
 import org.truelayer.challenge.pojo.Response.GetTleBySatelliteIdResponse;
 import org.truelayer.challenge.util.Log;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import static org.junit.Assert.*;
 
@@ -40,25 +40,26 @@ public class WhereTheIssApi extends RestEndPoints{
     public void the_response_body_should_be_have_satellite_position() throws JsonProcessingException {
         GetSatellitePositionByIdResponse[] getSatellitePositionResponse =  mapper.readValue(response.asString(), GetSatellitePositionByIdResponse[].class);
 
-        //Check if total positions returned are equal to the timestamps
+        //Check if total positions returned are equal to unique number of timestamps
         List<String> timestamps = Arrays.asList(query_params.get("timestamps").split(","));
-        assertEquals(timestamps.size(),getSatellitePositionResponse.length);
+        Set<String> unique_time = new HashSet<>(timestamps);
+        assertEquals("Number of positions returned do not match the timestamps",unique_time.size(),getSatellitePositionResponse.length);
 
-        //response validation
+        //response validation by soft assertion
         for(GetSatellitePositionByIdResponse resultJson:getSatellitePositionResponse)
         {
-            assertNotNull(resultJson.getName());
-            assertEquals(getSatelliteByIdRequest.getSatelliteId(),String.valueOf(resultJson.getId()));
-            assertNotNull(resultJson.getLatitude());
-            assertNotNull(resultJson.getLongitude());
-            assertNotNull(resultJson.getAltitude());
-            assertTrue(timestamps.contains(resultJson.getTimestamp()));
-            assertNotNull(resultJson.getSolar_lat());
-            assertNotNull(resultJson.getSolar_lon());
+            assertThat(resultJson.getName()).isNotNull();
+            assertThat(String.valueOf(resultJson.getId())).isEqualTo(getSatelliteByIdRequest.getSatelliteId());
+            assertThat(resultJson.getLatitude()).isNotNull();
+            assertThat(resultJson.getLongitude()).isNotNull();
+            assertThat(resultJson.getAltitude()).isNotNull();
+            assertThat(unique_time.contains(resultJson.getTimestamp())).isTrue();
+            assertThat(resultJson.getSolar_lat()).isNotNull();
+            assertThat(resultJson.getSolar_lon()).isNotNull();
             if (getSatelliteByIdRequest.getUnits()!=null)
-                assertEquals(getSatelliteByIdRequest.getUnits(), resultJson.getUnits());
+                assertThat(resultJson.getUnits()).isEqualTo(getSatelliteByIdRequest.getUnits());
             else
-                assertEquals("kilometers", resultJson.getUnits());
+                assertThat(resultJson.getUnits()).isEqualTo("kilometers");
         }
     }
 
@@ -105,15 +106,16 @@ public class WhereTheIssApi extends RestEndPoints{
 
     @When("I get the satellite position for satellite id {string} with {int} timestamps")
     public void iGetTheSatellitePositionForSatelliteIdWithTimestamps(String satelliteId, int numberOfTimestamps) throws IOException {
+        //read the timestamps from the timestamps file in data folder
         String data = new String(Files.readAllBytes(Paths.get("src/test/resources/data/timestamps")));
         List<String> timestamps = Arrays.asList(data.split(","));
         String timestamps_header="";
 
+        //pick the specified number of timestamps from the timestamps file in data folder and pass it as a query params
         for(int i=0;i<numberOfTimestamps;i++)
         {
             timestamps_header = timestamps.get(i)+","+timestamps_header;
         }
-
         timestamps_header = timestamps_header.substring(0,timestamps_header.length()-1);
         query_params.put("timestamps",timestamps_header);
         response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]",satelliteId),query_params);
@@ -135,15 +137,16 @@ public class WhereTheIssApi extends RestEndPoints{
             query_params.put(columns.get(0), columns.get(1));
         }
         int i=0;
-        //invoking the API number of times
+        //invoking the API n number of times
         while(i<load) {
             response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]", satellite_id), query_params);
+
+            //if response is not as expected, log in the api.log file
             if(response.getStatusCode() != 200) {
                 Log.warn("Service unavailable, status: " + response.statusCode());
                 serviceUnreliabilityCount++;
             }
             i++;
         }
-        System.out.println(serviceUnreliabilityCount);
     }
 }

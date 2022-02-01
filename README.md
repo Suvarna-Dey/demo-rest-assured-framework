@@ -4,6 +4,12 @@
 
 This Java based framework tests the WTI(What The ISS) REST APIs using RestAssured library. The API lets you get the current, past or future position of the ISS, get timezone information about a set of coordinates, and also get the TLE data on the ISS.
 
+### Scope
+
+Tests are covered for below APIs
+* Get satellite position by id : `/satellites/[id]/positions`
+* Get two line element set for a given satellite using id: `/satellites/[id]/tles`
+
 ### Prerequisites:
 * Java 8 or more
 * Maven
