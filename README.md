@@ -2,7 +2,7 @@
 
 ### Description:
 
-This Java based framework tests the WTIA REST APIs using RestAssured library. The wheretheiss API lets you get the current, past or future position of the ISS, get timezone information about a set of cordinates, and also get the TLE data on the ISS.
+This Java based framework tests the WTI(What The ISS) REST APIs using RestAssured library. The API lets you get the current, past or future position of the ISS, get timezone information about a set of coordinates, and also get the TLE data on the ISS.
 
 ### Prerequisites:
 * Java 8 or more
@@ -13,8 +13,8 @@ This Java based framework tests the WTIA REST APIs using RestAssured library. Th
 Tests can be run by following the below
 
 * Clone the Github repository
-* cd into the project folder from  terminal
-* Run the command:
+* cd into the project folder from the terminal
+* Run the below command:
 
 ```bash
  mvn clean install
@@ -25,7 +25,7 @@ Reports can be viewed in folder:
 * Cucumber HTML Reports: `target/cucumber-reports/cucumber-html-reports/overview-features.html`
 
 ### Logging:
-The api logs for negative scenarios can be viewed in folder: `log/api.log`
+The api logs for error scenarios can be viewed in folder: `log/api.log`
 
 ###Observations/Issues
 1. The exact error codes and messages are not specified for negative path. So the tests have been written by some assumption of error codes and scenarios.

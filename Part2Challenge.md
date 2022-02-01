@@ -1,4 +1,6 @@
-###Improvements for Team A:
+#Part 2 Challenge
+
+###Improvements in Quality for Team A:
 
 1. While Kanban retrospectives are not mandatory, I feel it is important to practice it to get feedback for continuous improvement. 
 2. Unit test coverage should be increased as it is base for test pyramid. The higher number of unit tests, better is the code quality. Also, there should be a tool to track the coverage like SonarQube.
@@ -6,7 +8,7 @@
 4. No test coverage for web apps on Safari Browser/Cross browser testing.
 5. No test coverage for Performance, security or accessibility testing.
 
-###Improvements for Team B:
+###Improvements in Quality for Team B:
 
 1. No backlog grooming.
 2. As this team seems to work backend APIs mostly, there could be changes in contracts that could break the consumers. It would be good to have contract testing in place to avoid the non communicated hiccups.
