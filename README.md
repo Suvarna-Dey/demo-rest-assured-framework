@@ -1,4 +1,4 @@
-# Truelayer Tech Challenge
+# TrueLayer Tech Challenge
 
 ### Description:
 
@@ -7,12 +7,14 @@ This Java based framework tests the WTI(What The ISS) REST APIs using RestAssure
 ### Prerequisites:
 * Java 8 or more
 * Maven
+* Git
 * Any browser for viewing HTML test report
+* Any terminal to run the bash command
 
 ### Execution:
 Tests can be run by following the below
 
-* Clone the Github repository
+* Clone the GitHub repository
 * cd into the project folder from the terminal
 * Run the below command:
 
@@ -28,10 +30,12 @@ Reports can be viewed in folder:
 The api logs for error scenarios can be viewed in folder: `log/api.log`
 
 ###Observations/Issues
-1. The exact error codes and messages are not specified for negative path. So the tests have been written by some assumption of error codes and scenarios.
+1. The exact error codes and messages are not specified for negative path. So the tests have been written by some assumption of error codes and messages.
 2. The API spec does not talk about the data types of the response or request data members.
-3. `/satellites/[id]/positions` does not limits the timestamps to 10 which contracdicts the API spec.
-4. If a same timestamp is provided to the `/satellites/[id]/positions` as query param, the same position is returned twice.
+3. `/satellites/[id]/positions` does not limits the timestamps to 10 which contradicts the API spec.
+4. If a same timestamp is provided to the endpoint `/satellites/[id]/positions` twice as query param, the same position is returned twice.
 
 ### Author
 Suvarna Narayan Dey  
+
+put a test for number 4 observation

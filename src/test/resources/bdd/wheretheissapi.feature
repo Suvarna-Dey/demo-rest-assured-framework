@@ -1,4 +1,5 @@
-Feature: This feature tests the wheretheiss public APIs
+Feature: WTIA API tests
+#  This feature tests the wheretheiss public APIs
 # Tests coverage for below APIs
 # Get satellite position by id : /satellites/[id]/positions
 # Get two line element set for a given satellite using id: /satellites/[id]/tles
