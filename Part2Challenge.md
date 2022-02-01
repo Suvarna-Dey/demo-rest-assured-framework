@@ -1,6 +1,8 @@
-#Part 2 Challenge
+# Part 2 Challenge
+
 
 ### Gaps / Areas of Improvement for Team A:
+
 1. While Kanban retrospectives are not mandatory, I feel it is important to practice it to get feedback for continuous improvement. 
 2. Unit test coverage should be increased as it is base for test pyramid. Also, there should be a tool to track the coverage like SonarQube.
 3. There is no test coverage for Rest API which can be improved by adding some component/contract level tests.
