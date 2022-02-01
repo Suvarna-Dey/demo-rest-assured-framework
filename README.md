@@ -2,7 +2,11 @@
 
 ### Description:
 
-This Java based framework tests the WTI(What The ISS) REST APIs using RestAssured library. The API lets you get the current, past or future position of the ISS, get timezone information about a set of coordinates, and also get the TLE data on the ISS.
+This Java based framework tests the WTIA(What The ISS at) REST APIs using RestAssured library. 
+The API lets you get the current, past or future position of the ISS, get timezone information about a set of coordinates, and also get the TLE data on the ISS.
+
+### API Spec:
+https://wheretheiss.at/w/developer
 
 ### Scope
 
@@ -14,11 +18,11 @@ Tests are covered for below APIs
 * Java 8 or more
 * Maven
 * Git
-* Any browser for viewing HTML test report
 * Any terminal to run the bash command
+* Any browser for viewing HTML test report
 
 ### Execution:
-Tests can be run by following the below
+Tests can be run by following the below steps
 
 * Clone the GitHub repository
 * cd into the project folder from the terminal
@@ -42,6 +46,4 @@ The api logs for error scenarios can be viewed in folder: `log/api.log`
 4. If a same timestamp is provided to the endpoint `/satellites/[id]/positions` twice as query param, the same position is returned twice.
 
 ### Author
-Suvarna Narayan Dey  
-
-put a test for number 4 observation
+Suvarna Narayan Dey

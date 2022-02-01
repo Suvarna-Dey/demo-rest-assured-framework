@@ -109,15 +109,15 @@ public class WhereTheIssApi extends RestEndPoints{
         //read the timestamps from the timestamps file in data folder
         String data = new String(Files.readAllBytes(Paths.get("src/test/resources/data/timestamps")));
         List<String> timestamps = Arrays.asList(data.split(","));
-        String timestamps_header="";
+        StringBuilder timestamps_header= new StringBuilder();
 
         //pick the specified number of timestamps from the timestamps file in data folder and pass it as a query params
         for(int i=0;i<numberOfTimestamps;i++)
         {
-            timestamps_header = timestamps.get(i)+","+timestamps_header;
+            timestamps_header.insert(0, timestamps.get(i) + ",");
         }
-        timestamps_header = timestamps_header.substring(0,timestamps_header.length()-1);
-        query_params.put("timestamps",timestamps_header);
+        timestamps_header = new StringBuilder(timestamps_header.substring(0, timestamps_header.length() - 1));
+        query_params.put("timestamps", timestamps_header.toString());
         response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]",satelliteId),query_params);
 
         getSatelliteByIdRequest.setSatelliteId(satelliteId);
@@ -141,12 +141,13 @@ public class WhereTheIssApi extends RestEndPoints{
         while(i<load) {
             response = restApiCalls.getResponseWithQueryParams(GET_SATELLITE_POSITION_BY_ID.replace("[id]", satellite_id), query_params);
 
-            //if response is not as expected, log in the api.log file
+            //if response is not 200, log the service unreliability in the api.log file
             if(response.getStatusCode() != 200) {
                 Log.warn("Service unavailable, status: " + response.statusCode());
                 serviceUnreliabilityCount++;
             }
             i++;
         }
+        Log.info("X-Rate-Limit-Remaining  "+response.header("X-Rate-Limit-Remaining"));
     }
 }

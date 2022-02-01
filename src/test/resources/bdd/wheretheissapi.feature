@@ -1,10 +1,10 @@
-Feature: WTIA API tests
+Feature: Get satellite position and TLE data
 #  This feature tests the wheretheiss public APIs
 # Tests coverage for below APIs
 # Get satellite position by id : /satellites/[id]/positions
 # Get two line element set for a given satellite using id: /satellites/[id]/tles
 
-  Scenario Outline: Get satellite position for valid satellite id - Happy Path
+  Scenario Outline: Get satellite position for valid satellite id
     When I get the satellite position for satellite "<satellite_id>" for below
       | timestamps | <timestamps> |
       | units      | <unit>       |
@@ -16,7 +16,7 @@ Feature: WTIA API tests
       | 25544        | 1436029892            | miles | 200           |
       | 25544        | 1436029892,1436029902 | miles | 200           |
       | 25544        | 1436029892            |       | 200           |
-      | 25544        | 1436029892,1436029892 | miles | 200           |
+      | 25544        | 1436029892,1436029892 |       | 200           |
 
   Scenario Outline: Validations for get satellite position by Id
     When I get the satellite position for satellite "<satellite_id>" for below
@@ -35,7 +35,7 @@ Feature: WTIA API tests
     Then the response status code should be 200
     And the response body should be have satellite position
 
-  Scenario: Validate response for get satellite positions with 10 timestamps
+  Scenario: Validate response for get satellite positions with 11 timestamps
     When I get the satellite position for satellite id "25544" with 11 timestamps
     Then the response status code should be 403
 
@@ -50,9 +50,9 @@ Feature: WTIA API tests
       | 25544        | json   |
       | 25544        | text   |
 
-  @NFT
+  @nft
   Scenario: Load test create quote request
-    When I get the satellite position for satellite "25544" for below 20 times
+    When I get the satellite position for satellite "25544" for below 85 times
       | timestamps | 1436029892 |
       | units      | miles      |
     Then log the response when service is unavailable
