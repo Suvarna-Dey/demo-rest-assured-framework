@@ -15,7 +15,7 @@ Tests are covered for below APIs
 * Get two line element set for a given satellite using id: `/satellites/[id]/tles`
 
 ### Prerequisites:
-* Java 8 or more
+* Java 8 and above
 * Maven
 * Git
 * Any terminal to run the bash command
