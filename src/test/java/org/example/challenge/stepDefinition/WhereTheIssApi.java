@@ -1,4 +1,4 @@
-package org.truelayer.challenge.stepDefinition;
+package org.example.challenge.stepDefinition;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.cucumber.datatable.DataTable;
@@ -8,12 +8,12 @@ import io.cucumber.java.en.When;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.truelayer.challenge.apiSupport.RestApiCalls;
-import org.truelayer.challenge.pojo.Request.GetSatellitePositionByIdRequest;
-import org.truelayer.challenge.pojo.Request.GetTleBySatelliteIdRequest;
-import org.truelayer.challenge.pojo.Response.GetSatellitePositionByIdResponse;
-import org.truelayer.challenge.pojo.Response.GetTleBySatelliteIdResponse;
-import org.truelayer.challenge.util.Log;
+import org.example.challenge.apiSupport.RestApiCalls;
+import org.example.challenge.pojo.Request.GetSatellitePositionByIdRequest;
+import org.example.challenge.pojo.Request.GetTleBySatelliteIdRequest;
+import org.example.challenge.pojo.Response.GetSatellitePositionByIdResponse;
+import org.example.challenge.pojo.Response.GetTleBySatelliteIdResponse;
+import org.example.challenge.util.Log;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

@@ -1,4 +1,4 @@
-package org.truelayer.challenge.util;
+package org.example.challenge.util;
 
 import org.apache.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package org.truelayer.challenge.pojo.Request;
+package org.example.challenge.pojo.Request;
 
 import lombok.Data;
 

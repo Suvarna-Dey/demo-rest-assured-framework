@@ -1,4 +1,4 @@
-package org.truelayer.challenge.stepDefinition;
+package org.example.challenge.stepDefinition;
 
 import lombok.Data;
 

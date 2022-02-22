@@ -1,4 +1,4 @@
-package org.truelayer.challenge.pojo.Response;
+package org.example.challenge.pojo.Response;
 
 import lombok.Data;
 import java.math.BigDecimal;

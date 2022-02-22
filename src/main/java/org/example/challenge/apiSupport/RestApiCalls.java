@@ -1,8 +1,8 @@
-package org.truelayer.challenge.apiSupport;
+package org.example.challenge.apiSupport;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.truelayer.challenge.util.Log;
+import org.example.challenge.util.Log;
 import java.util.Map;
 
 public class RestApiCalls {

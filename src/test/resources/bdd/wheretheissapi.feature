@@ -29,6 +29,7 @@ Feature: Get satellite position and TLE data
       | satellite_id | timestamps            | unit  | response_code | error                      |
       | 123          | 1436029892            |       | 404           | satellite not found        |
       | 25544        |                       | miles | 400           | invalid timestamp in list: |
+#    any other unit than miles or kilometers = displays in kilometers
 
   Scenario: Validate response for get satellite positions with 10 timestamps
     When I get the satellite position for satellite id "25544" with 10 timestamps
@@ -49,10 +50,13 @@ Feature: Get satellite position and TLE data
       | 25544        |        |
       | 25544        | json   |
       | 25544        | text   |
+      | 25544        | xml    |
+#    get TLE data for satellite that does not exist = 404
+#    get TLE data in format other than JSON or text like xml = returns JSON
 
   @nft
   Scenario: Load test create quote request
-    When I get the satellite position for satellite "25544" for below 85 times
+    When I get the satellite position for satellite "25544" for below 20 times
       | timestamps | 1436029892 |
       | units      | miles      |
     Then log the response when service is unavailable
